@@ -1,3 +1,7 @@
+'use client'
+
+import { motion } from "framer-motion";
+
 export default function Strategy() {
   const items = [
     "GameFi 🎮",
@@ -9,18 +13,49 @@ export default function Strategy() {
     "dApps 📱",
   ];
   const items2 = [
-    'Infrastructure Services 🏗️',
-    'Wallets 🏦	',
-    'NFTs 🖼️',
-    'DeFi 💸',
+    "Infrastructure Services 🏗️",
+    "Wallets 🏦	",
+    "NFTs 🖼️",
+    "DeFi 💸",
     "VC Funds 💰",
     "GameFi 🎮",
     "Hedge Funds 🐻",
-  ]
+  ];
+
+  const var1 = {
+    initial: {
+      y: 20,
+      opacity: 0,
+    },
+    animate: (key: number) => ({
+      y: 0,
+      opacity: 1,
+      transition: {
+        delay: key * 0.05,
+      },
+    }),
+  };
   return (
-    <div className="padding py-16 lg:py-28 font-bold bg-white  text-center" id="strategy">
-      <p className="text-xl ">
-        Delivering marketing strategy across crypto companies
+    <div
+      className="padding py-16 lg:py-28 font-bold bg-white  text-center"
+      id="strategy"
+    >
+      <p className="text-xl w-full items-center justify-center gap-2 flex flex-wrap text-center">
+        {"Delivering marketing strategy across crypto companies"
+          .split(" ")
+          .map((data, key) => (
+            <motion.span
+              variants={var1}
+              viewport={{ once: true }}
+              custom={key}
+              initial="initial"
+              whileInView="animate"
+              className="inline-block"
+            >
+              {data}{" "}
+            </motion.span>
+          ))}
+        
       </p>
       <div className="flex cursor-grab text-[22px] lg:text-2xl overflow-hidden whitespace-nowrap mt-10 lg:mt-14">
         <div className="flex animate items-center">
