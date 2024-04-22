@@ -45,7 +45,7 @@ export default function Comp({
 
   return (
     <div
-      className={`block lg:flex bg-white  items-center shadow-xl p-5 sm:p-8 md:p-8 lg:p-12 gap-10 rounded-3xl max-w-[1000px] mx-auto ${
+      className={`block md:flex bg-white  items-center shadow-xl p-5 sm:p-8 md:p-8 lg:p-12 gap-10 rounded-3xl max-w-[1000px] mx-auto ${
         position === "right" ? "lg:flex-row " : "lg:flex-row-reverse"
       }`}
     >

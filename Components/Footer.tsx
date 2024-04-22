@@ -1,3 +1,5 @@
+import Logo from '@/assets/images/logo.png'
+import Image from "next/image";
 import {
   BsFacebook,
   BsInstagram,
@@ -47,8 +49,14 @@ export default function Footer() {
         <div className="grid lg:grid-cols-1 xl:grid-cols-[1fr_4fr] gap-5 lg:gap-10 xl:gap-16">
           <div className="flex items-center flex-col text-center lg:items-start lg:text-start">
             <div className="flex items-center gap-3">
-              <IoDiamondOutline className="text-5xl text-[blue] stroke-1" />
-              <p className="font-bold uppercase text-3xl">Vertico</p>
+              <Image
+                alt=""
+                src={Logo}
+                height={0}
+                width={0}
+                className="h-9 w-9 lg:h-12 lg:w-12 object-cover"
+              />
+              <p className="text-xl font-bold">Reputable</p>
             </div>
             <p className="font-semibold text-13 mt-5 mb-2">
               We connect ambition with results.
@@ -111,7 +119,7 @@ export default function Footer() {
                 <div className="mt-3">
                   <p>Email</p>
                   <p className="text-15 font-semibold mt-1 cursor-pointer">
-                    hi@cydhar.com
+                    hi@reputable.com
                   </p>
                 </div>
               </div>
@@ -121,7 +129,7 @@ export default function Footer() {
         <div className="mt-10">
           <div className="flex flex-col items-center lg:flex-row lg:justify-between gap-5">
             <p className="text-xs sm:text-13">
-              © 2024 VERTICO Ventures Pvt. Ltd. All rights reserved.
+              © 2024 Reputable Ventures Pvt. Ltd. All rights reserved.
             </p>
             <div className="flex gap-10">
               {["Terms of Service", "Privacy Policy", "Cookie Policy"].map(

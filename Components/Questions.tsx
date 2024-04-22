@@ -46,11 +46,11 @@ export default function Questions() {
     ],
     [
       "What kind of crypto marketing services does Branch chain provide",
-      "We are a full-service crypto marketing service provider. Altorise provides a variety of services that aim to build brand awareness, acquire customers, increase return customers, and improve sales for businesses in the cryptocurrency industry. These services include tactics such as social media marketing, content creation, community management, Twitter management, email marketing, search engine optimization, paid advertising, influencer marketing, public relations, and many more.",
+      "We are a full-service crypto marketing service provider. Reputable provides a variety of services that aim to build brand awareness, acquire customers, increase return customers, and improve sales for businesses in the cryptocurrency industry. These services include tactics such as social media marketing, content creation, community management, Twitter management, email marketing, search engine optimization, paid advertising, influencer marketing, public relations, and many more.",
     ],
     [
       "Why should i choose Brancchain for our crypto marketing and advertising",
-      "At VERTICO, we understand that your success is our success. That's why we take a hands-on approach with every project we work on, treating it as if it were our own. Our team is dedicated to meeting and exceeding your business goals, and we are fully invested in ensuring that your project is a success.",
+      "At Reputable, we understand that your success is our success. That's why we take a hands-on approach with every project we work on, treating it as if it were our own. Our team is dedicated to meeting and exceeding your business goals, and we are fully invested in ensuring that your project is a success.",
     ],
     [
       "How do you build a thriving crypto community for us",

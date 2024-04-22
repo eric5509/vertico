@@ -33,9 +33,6 @@ export default function Dropdown({ setDropdown, dropdownOpened }: Props) {
     },
   };
 
- 
-
- 
   return (
     <div className="">
       <AnimatePresence>
@@ -61,28 +58,32 @@ export default function Dropdown({ setDropdown, dropdownOpened }: Props) {
                     <b>marketing accelerator</b>
                     <p>
                       If you would like to learn more about our marketing
-                      accelerator for your business, contact VERTICO founder &
+                      accelerator for your business, contact Reputable founder &
                       CEO directly at
                     </p>
-                    <p>ceo@vertico.com</p>
+                    <p>ceo@Reputable.com</p>
                   </div>
                   <div className="flex flex-col gap-5">
-                    <b>careers at VERTICO</b>
+                    <b>careers at Reputable</b>
                     <p>
                       We are always hiring passionate people. Please apply via
                       our websites careers section. Got questions for our hiring
                       team?
                     </p>
-                    <p>careers@vertico.com</p>
+                    <p>careers@Reputable.com</p>
                   </div>
                 </div>
               </div>
-              <motion.div initial="initial" animate="animate" className=" w-full ">
+              <motion.div
+                initial="initial"
+                animate="animate"
+                className=" w-full "
+              >
                 <FaTimes
                   onClick={() => setDropdown(false)}
                   className="absolute text-2xl cursor-pointer top-7 right-[100px] z-[50000]"
                 />
-                <motion.div  className="grid grid-cols-2 h-14 gap-5">
+                <motion.div className="grid grid-cols-2 h-14 gap-5">
                   <div className="border-b flex items-center gap-2">
                     <BsPerson className="mx-1 text-2xl" />
                     <div className="h-full flex-1 ">
@@ -105,7 +106,7 @@ export default function Dropdown({ setDropdown, dropdownOpened }: Props) {
                   </div>
                 </motion.div>
                 <div className=" w-full mt-5">
-                  <motion.div  className="grid grid-cols-2 h-14 gap-5">
+                  <motion.div className="grid grid-cols-2 h-14 gap-5">
                     <div className="border-b flex items-center gap-2">
                       <BiChat className="mx-1 text-2xl" />
                       <div className="h-full flex-1 ">

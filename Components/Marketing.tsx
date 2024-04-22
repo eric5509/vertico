@@ -32,14 +32,15 @@ export default function Marketing() {
 
   const var1 = {
     initial: {
-      y: 20,
+      y: 40,
       opacity: 0,
     },
     animate: (key: number) => ({
       y: 0,
-      opacity: 1.25,
+      opacity: 1,
       transition: {
-        delay: key * 0.05,
+        duration: .5,
+        delay: key * .1,
       },
     }),
   };
@@ -60,7 +61,7 @@ export default function Marketing() {
                 whileInView="animate"
                 className="inline-block"
               >
-                {data}{" "}
+                {data}
               </motion.span>
             ))}
           </p>

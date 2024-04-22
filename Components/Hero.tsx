@@ -2,15 +2,17 @@
 import localFont from "next/font/local";
 import { motion } from "framer-motion";
 import Button from "./Button";
-import Magnet from '@/assets/images/magnet.png'
-import Bag from '@/assets/images/bag.png'
-import Hand from '@/assets/images/hand.png'
-import Arrow from '@/assets/images/arrow.png'
+import Magnet from "@/assets/images/magnet.png";
+import Bag from "@/assets/images/bag.png";
+import Hand from "@/assets/images/hand.png";
+import Arrow from "@/assets/images/arrow.png";
 import Image from "next/image";
 
+// yellow #e7c72b
+// blue #01bdea
+// red #f6778e
 
-
-const myFont = localFont({ src: "../assets/fonts/Poppins-Extrabold.ttf" });
+const myFont = localFont({ src: "../assets/fonts/Poppins-ExtraBold.ttf" });
 
 export default function Hero() {
   const fullstack = {
@@ -40,6 +42,31 @@ export default function Hero() {
     },
   };
 
+  const bagAnimation = {
+    initial: {
+      opacity: 0,
+    },
+    animate: {
+      opacity: 1,
+      transition: {
+        duration: .5,
+      },
+    },
+  };
+
+  const arrowAnimation = {
+    initial: {
+      opacity: 0,
+    },
+    animate: {
+      opacity: 1,
+      transition: {
+        duration: 1,
+        delay: .5
+      },
+    },
+  };
+
   return (
     <div className="min-h-screen bg-white">
       <div className="min-h-screen container grid grid-cols-1 lg:grid-cols-2">
@@ -48,6 +75,7 @@ export default function Hero() {
             variants={fullstack}
             initial="initial"
             whileInView="animate"
+            viewport={{ once: true }}
             className="font-bold text-cyan-900 mb-2 text-3xl lg:text-[52px]"
           >
             Meet your full-stack
@@ -56,6 +84,7 @@ export default function Hero() {
             variants={fullstack1}
             initial="initial"
             whileInView="animate"
+            viewport={{ once: true }}
             className={`textGradient font-[800] text-3xl lg:text-[52px] leading-snug ${myFont.className}`}
           >
             CRYPTO MARKETING
@@ -64,6 +93,7 @@ export default function Hero() {
             variants={fullstack1}
             initial="initial"
             whileInView="animate"
+            viewport={{ once: true }}
             className={`textGradient2 font-[800] text-3xl lg:text-[52px] leading-snug ${myFont.className}`}
           >
             AGENCY
@@ -73,6 +103,7 @@ export default function Hero() {
               variants={fullstack1}
               initial="initial"
               whileInView="animate"
+              viewport={{ once: true }}
               className="text-sm"
             >
               We help crypto startups build trust in a trustless ecosystem. Our
@@ -87,6 +118,7 @@ export default function Hero() {
             variants={fullstack1}
             initial="initial"
             whileInView="animate"
+            viewport={{ once: true }}
             className="flex lg:mb-5 flex-col lg:flex-row items-center gap-6 lg:gap-12 mt-5 lg:mt-10"
           >
             <Button text="Message us on Telegram" />
@@ -95,9 +127,50 @@ export default function Hero() {
             </p>
           </motion.div>
         </div>
-        <div className="">
-          <Image src={Magnet} alt="" height={0} width={0} className="h-32 w-32 object-cover"/>
-        </div>
+        {/* <div className="relative">
+          <Image
+            src={Magnet}
+            alt=""
+            height={0}
+            width={0}
+            className="h-44 w-44 absolute bottom-36 -rotate-90 right-16 z-30 object-cover"
+          />
+          <motion.div
+            variants={arrowAnimation}
+            initial="initial"
+            animate="animate"
+            className="z-30 "
+          >
+            <Image
+              src={Arrow}
+              alt=""
+              height={0}
+              width={0}
+              className="h-44 w-44 absolute bottom-28 -rotate-90 left-28 z-30 object-cover"
+            />
+          </motion.div>
+          <Image
+            src={Hand}
+            alt=""
+            height={0}
+            width={0}
+            className="h-56 w-56 absolute right-36 -rotate-90 top-10 object-cover"
+          />
+          <motion.div
+            variants={bagAnimation}
+            initial="initial"
+            animate="animate"
+            className="z-20"
+          >
+            <Image
+              src={Bag}
+              alt=""
+              height={0}
+              width={0}
+              className="h-80 w-80 top-1/2 z-20 left-1/2 -translate-y-1/2 -translate-x-1/2  absolute object-cover"
+            />
+          </motion.div>
+        </div> */}
       </div>
     </div>
   );
