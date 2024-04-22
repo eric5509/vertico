@@ -40,7 +40,7 @@ export default function Strategy() {
       className="padding py-16 lg:py-28 font-bold bg-white  text-center"
       id="strategy"
     >
-      <p className="text-2xl w-full items-center justify-center gap-2 flex flex-wrap text-center">
+      <p className="text-[27px] w-full items-center justify-center gap-2 flex flex-wrap text-center">
         {"Delivering marketing strategy across crypto companies"
           .split(" ")
           .map((data, key) => (

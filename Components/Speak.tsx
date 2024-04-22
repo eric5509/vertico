@@ -1,20 +1,48 @@
+'use client'
 import Image from "next/image";
 import { BsLinkedin, BsTelegram } from "react-icons/bs";
+import { motion } from 'framer-motion'
 
 export default function Speak() {
+
+  const variantsParent = {
+    initial: {},
+    animate: {
+      transition: {
+        duration: 1,
+        staggerChildren: 0.25,
+      },
+    },
+  };
+
+  const variantsChild = {
+    initial: {
+      opacity: 0,
+      y: 40
+    },
+    animate: {
+      opacity: 1,
+      y: 0,
+      transition: {
+        duration: 1,
+      },
+    },
+  };
+
+  
   return (
     <div className="bg-[#010C11] text-white py-16 lg:py-24 padding ">
       <div className="grid container grid-cols-1 md:grid-cols-2 gap-12 lg:gap-5">
-        <div className="flex flex-col items-center text-center md:items-start md:text-start gap-10 sm:gap-16 justify-between">
+        <motion.div variants={variantsParent} initial="initial" whileInView="animate" className="flex flex-col items-center text-center md:items-start md:text-start gap-10 sm:gap-16 justify-between">
           <div className="">
-            <p className="text-3xl lg:text-4xl mb-4 font-semibold">Speak to us today</p>
-            <p>
+            <motion.p variants={variantsChild} className="text-3xl lg:text-4xl mb-4 font-semibold">Speak to us today</motion.p>
+            <motion.p variants={variantsChild}>
               Hop on a call with our team and learn how we can solve your <br />{" "}
               crypto marketing and design needs.
-            </p>
+            </motion.p>
           </div>
           <div className="flex flex-col gap-2">
-            <div className="h-56 w-56 overflow-hidden rounded-xl">
+            <motion.div variants={variantsChild} className="h-56 w-56 overflow-hidden rounded-xl">
               <Image
                 alt=""
                 unoptimized
@@ -23,22 +51,22 @@ export default function Speak() {
                 src={`https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQiXGxICs0sQodC0AqsjE5TeR28Zs3ejfsnYbd-FGGgFQ&s`}
                 className="h-full w-full object-cover"
               />
-            </div>
-            <p className="font-bold text-xl">Praven BABU</p>
-            <p>
+            </motion.div>
+            <motion.p variants={variantsChild} className="font-bold text-xl">Praven BABU</motion.p>
+            <motion.p variants={variantsChild}>
               Founder and CEO at <b>VERTICO</b>
-            </p>
-            <p>(Mumbai, India office)</p>
-            <div className="flex justify-center md:justify-start items-center gap-3">
+            </motion.p>
+            <motion.p variants={variantsChild}>(Mumbai, India office)</motion.p>
+            <motion.div variants={variantsChild} className="flex justify-center md:justify-start items-center gap-3">
               <div className="h-10 w-10 text-xl duration-300 hover:border-blue-500 hover:text-blue-500 border border-white rounded-full center">
                 <BsTelegram />
               </div>
               <div className="h-10 w-10 text-xl duration-300 hover:border-blue-500 hover:text-blue-500 border border-white rounded-full center">
                 <BsLinkedin />
               </div>
-            </div>
+            </motion.div>
           </div>
-        </div>
+        </motion.div>
 
         <div className="sm:px-10 lg:px-0">
           <div className="h-full min-h-80 bg-white overflow-hidden relative rounded-2xl">

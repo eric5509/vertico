@@ -37,14 +37,14 @@ body {
 }
 
 .textGradient {
-  background-image: linear-gradient(90deg, red, blue);
+  background-image: linear-gradient(90deg, red,rgb(158, 155, 155), blue);
   -webkit-text-fill-color: transparent;
   background-clip: text;
   -webkit-background-clip: text;
 }
 
 .textGradient2 {
-  background-image: linear-gradient(90deg, blue, red);
+  background-image: linear-gradient(90deg, blue, rgb(158, 155, 155), red);
   -webkit-text-fill-color: transparent;
   background-clip: text;
   -webkit-background-clip: text;
@@ -55,7 +55,7 @@ body {
 }
 
 .container {
-  @apply max-w-[1350px] w-full mx-auto;
+  @apply max-w-[1250px] w-full mx-auto;
 }
 
 .center {

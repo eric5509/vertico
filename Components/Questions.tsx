@@ -1,10 +1,35 @@
 "use client";
 import { useRef, useState } from "react";
 import { BiMinus } from "react-icons/bi";
+import { motion } from "framer-motion";
 import { BsPlus } from "react-icons/bs";
 
 export default function Questions() {
   const [opened, setOpened] = useState(100);
+
+  const variantsParent = {
+    initial: {},
+    animate: {
+      transition: {
+        duration: 1,
+        staggerChildren: 0.1,
+      },
+    },
+  };
+
+  const variantsChild = {
+    initial: {
+      opacity: 0,
+      y: 40,
+    },
+    animate: {
+      opacity: 1,
+      y: 0,
+      transition: {
+        duration: 1,
+      },
+    },
+  };
 
   const data = [
     [
@@ -50,9 +75,16 @@ export default function Questions() {
               <span className="text-blue-500">set up a meeting today!</span>
             </p>
           </div>
-          <div className="flex w-full mt-16 flex-col gap-4">
+          <motion.div
+            variants={variantsParent}
+            initial="initial"
+            whileInView="animate"
+            className="flex w-full mt-16 flex-col gap-4"
+          >
             {data.map((item, key) => (
-              <div
+              <motion.div
+                variants={variantsChild}
+                viewport={{ once: true }}
                 className={`flex w-full cursor-pointer border-b  gap-5 justify-between `}
                 onClick={() => {
                   if (opened === key) {
@@ -62,7 +94,9 @@ export default function Questions() {
                   }
                 }}
               >
-                <p className="hidden sm:block text-xl lg:text-2xl font-semibold">0{key + 1}</p>
+                <p className="hidden sm:block text-xl lg:text-2xl font-semibold">
+                  0{key + 1}
+                </p>
                 <div className="flex-1">
                   <p className="text-lg: lg:text-xl font-semibold">{item[0]}</p>
                   <div
@@ -72,15 +106,17 @@ export default function Questions() {
                         : "grid-rows-[0fr] opacity-0"
                     }`}
                   >
-                    <p className="text-sm leading-relaxed overflow-hidden">{item[1]}</p>
+                    <p className="text-sm leading-relaxed overflow-hidden">
+                      {item[1]}
+                    </p>
                   </div>
                 </div>
                 <div className="text-xl lg:text-2xl">
                   {opened !== key ? <BsPlus /> : <BiMinus />}
                 </div>
-              </div>
+              </motion.div>
             ))}
-          </div>
+          </motion.div>
         </div>
       </div>
     </div>

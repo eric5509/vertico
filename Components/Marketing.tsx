@@ -1,7 +1,8 @@
+'use client'
 import Image from "next/image";
 import localFont from "next/font/local";
 import { BsArrowRight } from "react-icons/bs";
-
+import { motion } from 'framer-motion'
 const myFont = localFont({ src: "../assets/fonts/Poppins-Bold.ttf" });
 
 export default function Marketing() {
@@ -29,14 +30,39 @@ export default function Marketing() {
     ],
   ];
 
+  const var1 = {
+    initial: {
+      y: 20,
+      opacity: 0,
+    },
+    animate: (key: number) => ({
+      y: 0,
+      opacity: 1.25,
+      transition: {
+        delay: key * 0.05,
+      },
+    }),
+  };
+
   return (
     <div className="py-14 sm:py-16 lg:lg:py-20 padding bg-emerald-50" id="work">
       <div className="container">
         <div className="flex justify-between py-10 lg:py-14 text-center lg:text-start items-center">
           <p
-            className={`font-bold text-3xl sm:text-4xl lg:text-[44px] ${myFont.className}`}
+            className={`font-bold flex gap-2  text-3xl sm:text-4xl lg:text-[44px] ${myFont.className}`}
           >
-            Our recent crypto marketing work
+            {"Our recent crypto marketing work".split(" ").map((data, key) => (
+              <motion.span
+                variants={var1}
+                viewport={{ once: true }}
+                custom={key}
+                initial="initial"
+                whileInView="animate"
+                className="inline-block"
+              >
+                {data}{" "}
+              </motion.span>
+            ))}
           </p>
           <div className="hidden cursor-pointer lg:flex text-base items-center gap-3">
             <p>Browse more</p>

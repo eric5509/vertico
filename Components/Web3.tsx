@@ -39,7 +39,7 @@ export default function Web3() {
 
   return (
     <div className="bg-black my-16 text-white relative cursor  overflow-hidden py-16 text-center">
-      <p className="text-2xl font-bold flex-wrap text-center items-center justify-center w-full flex gap-2">
+      <p className="text-[27px] font-bold flex-wrap text-center items-center justify-center w-full flex gap-2">
         {"We work with the leading Web3 projects like"
           .split(" ")
           .map((data, key) => (

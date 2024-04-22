@@ -1,6 +1,31 @@
+"use client";
+import { motion } from "framer-motion";
+
 import Image from "next/image";
 
 export default function Demand() {
+  const variantsParent = {
+    initial: {},
+    animate: {
+      transition: {
+        duration: 1,
+        staggerChildren: 0.25,
+      },
+    },
+  };
+
+  const variantsChild = {
+    initial: {
+      opacity: 0,
+    },
+    animate: {
+      opacity: 1,
+      transition: {
+        duration: 1,
+      },
+    },
+  };
+
   const infos = [
     ["", ""],
     [
@@ -31,9 +56,15 @@ export default function Demand() {
   ];
   return (
     <div className="bg-blue-100 py-10 lg:py-16 padding" id="careers">
-      <div className="grid container py-16 gap-x-5 gap-y-10 grid-cols-1 sm:grid-cols-2 lg:grid-cols-3">
+      <motion.div
+        variants={variantsParent}
+        initial="initial"
+        viewport={{once: true}}
+        whileInView="animate"
+        className="grid container py-16 gap-x-5 gap-y-10 grid-cols-1 sm:grid-cols-2 lg:grid-cols-3"
+      >
         {infos.map((data, key) => (
-          <div className="">
+          <motion.div variants={variantsChild} className="">
             {key === 0 ? (
               <div className="text-center sm:text-start flex flex-col items-center justify-center sm:items-start sm:justify-start">
                 <p className="px-6 py-3 rounded-full w-fit bg-gradient-to-r from-[#cbe693] to-[#98dab9]">
@@ -61,9 +92,9 @@ export default function Demand() {
                 <p>{data[2]}</p>
               </div>
             )}
-          </div>
+          </motion.div>
         ))}
-      </div>
+      </motion.div>
     </div>
   );
 }
