@@ -1,113 +1,109 @@
-import Image from "next/image";
+import Strategy from "@/Components/Strategy";
+import Deliver from "../Components/Deliver";
+import Demand from "../Components/Demand";
+import Hero from "../Components/Hero";
+import Questions from "../Components/Questions";
+import Speak from "../Components/Speak";
+import Web3 from "../Components/Web3";
+import Footer from "@/Components/Footer";
+import Marketing from "@/Components/Marketing";
+import Comp from "@/Components/Comp";
+import Button from "@/Components/Button";
 
 export default function Home() {
+  const details = [
+    {
+      title: "Full-stack digital marketing services",
+      subtitle: "Web3 Marketing Strategy",
+      text: "Let's make marketing strategy effortless. Our comprehensive marketing solution is designed to deliver on every aspect of your crypto marketing needs. Our holistic strategy covers everything from wallets, dApps, trading platforms, developer infrastructure, and an initial coin offering to a blockchain launch. Your marketing teams will work with our in-house team of marketers, community managers, writers, graphic & motion designers, and developers — to achieve your crypto project's goals.",
+      position: "left",
+      img: "https://altorise.com/wp-content/uploads/2023/11/web3-Marketing.jpg.webp",
+      gradient: "linear-gradient(to right, red, blue)",
+    },
+    {
+      title: "Build Discord and Telegram communities",
+      subtitle: "Community Management",
+      text: "Any successful launch in the crypto space needs a loyal community to drive its success. We help you build your tribe on Discord and Telegram. Your dedicated crypto community manager at Altorise would share updates with the community, engage any incoming queries, and discourage spam & scammers while fostering the growth of followers in the community. Find out how our team can help you set up the server, configure admin bots, create channels, and moderate roles and posts across the community.",
+      position: "right",
+      img: "https://altorise.com/wp-content/uploads/2023/11/community-management.jpg.webp",
+      gradient: "linear-gradient(to right, purple, blue)",
+    },
+    {
+      title: "Win investors with crypto pitch decks",
+      subtitle: "Investor Strategy",
+      text: "Let us help you create today's best crypto pitch deck for your crypto project. While you are a builder and expert in your domain area, we, on the other hand, contribute by crafting a compelling startup narrative based on a decade's experience in creating winning pitch decks. Our work involves market research, design, branding, business models, technology diagrams, litepapers, investor updates, and more. We can also help you develop a comprehensive go-to-market strategy for your project.",
+      position: "left",
+      img: "https://altorise.com/wp-content/uploads/2023/11/investor-strategy.jpg.webp",
+      gradient: "linear-gradient(to right, yellow, green)",
+    },
+    {
+      title: "Impactful PR and content marketing",
+      subtitle: "PR & Content Marketing",
+      text: "Generate buzz around your project, new feature launches, and your marketing campaigns with smart and high-impact press releases and content marketing strategies. Benefit from our partnerships with leading crypto native and mainstream publications and capabilities to write powerful content across your blog, Medium, Mirror.xyz, and more. Our search engine optimization (SEO) processes also maximize the long-term, inbound search results discovery of your Web3 project.",
+      position: "right",
+      img: "https://altorise.com/wp-content/uploads/2023/11/content-mangement.jpg.webp",
+      gradient: "linear-gradient(to right, orange, tomato)",
+    },
+    {
+      title: "Engage across social media platforms",
+      subtitle: "Social Media Management",
+      text: "As networks grow and new ones emerge, we develop comprehensive social media marketing strategies for your project. Creating engaging content in your brand's unique voice and consistently keeping conversations active across platforms, we do what's needed to keep your project top-of-mind and in the news. Rely on us to keep tabs on trends, tap into memes, and build community trust with authentic and timely content. Activate X (formerly Twitter), YouTube, Farcaster, and more platforms today.",
+      position: "left",
+      img: "https://altorise.com/wp-content/uploads/2023/11/social-media-mangement.jpg.webp",
+      gradient: "linear-gradient(to right, yellow, red)",
+    },
+    {
+      title: "Grow with crypto native ad campaigns",
+      subtitle: "Ads & Promotions",
+      text: "We simplify how you can get the word out in the crypto space. We balance and adapt a mix of native crypto platforms with traditional marketing avenues to ensure your brand is seen by the right audience on time. We use a variety of tools and programmatic advertising techniques to ensure conversion rate optimization. The blockchain marketing ecosystem is constantly growing, and we work with you to benefit from every platform's global reach and impact.",
+      position: "right",
+      img: "https://altorise.com/wp-content/uploads/2023/11/ads-promotions.jpg.webp",
+      gradient: "linear-gradient(to right, pink, gray)",
+    },
+    {
+      title: "KOL and influencer marketing for reach",
+      subtitle: "Crypto Influencers & Videos",
+      text: "Building credibility and educating users or potential investors about your crypto project offerings also benefits when you associate with ideal crypto influencers. We work with an array of creators across the globe to increase your customer base. Finding the key opinion leaders (KOL) for your project's unique needs requires systematic and ongoing strategies to get the highest ROI on your investment. We also produce videos and any content necessary to maximize the effectiveness of every campaign.",
+      position: "left",
+      img: "https://altorise.com/wp-content/uploads/2023/11/crypto-influencers-video.jpg.webp",
+      gradient: "linear-gradient(to right, blue, yellow)",
+    },
+    {
+      title: "UI/UX services for your crypto startup",
+      subtitle: "UI/UX Design",
+      text: "Differentiating your project and improving user experiences is a key goal every project hopes to achieve. Our bespoke crypto UI/UX design services ensure your product and development teams have the support to deliver fantastic experiences across platforms. Connect with us today to learn about the UI solutions Altorise can offer. Get started in days with a dedicated team or a bespoke team augmentation to meet your immediate UI design needs.",
+      position: "right",
+      img: "https://altorise.com/wp-content/uploads/2023/11/ui-ux-desing.jpg.webp",
+      gradient: "linear-gradient(to right, red, green)",
+    },
+  ];
+
   return (
-    <main className="flex min-h-screen flex-col items-center justify-between p-24">
-      <div className="z-10 w-full max-w-5xl items-center justify-between font-mono text-sm lg:flex">
-        <p className="fixed left-0 top-0 flex w-full justify-center border-b border-gray-300 bg-gradient-to-b from-zinc-200 pb-6 pt-8 backdrop-blur-2xl dark:border-neutral-800 dark:bg-zinc-800/30 dark:from-inherit lg:static lg:w-auto  lg:rounded-xl lg:border lg:bg-gray-200 lg:p-4 lg:dark:bg-zinc-800/30">
-          Get started by editing&nbsp;
-          <code className="font-mono font-bold">app/page.tsx</code>
-        </p>
-        <div className="fixed bottom-0 left-0 flex h-48 w-full items-end justify-center bg-gradient-to-t from-white via-white dark:from-black dark:via-black lg:static lg:size-auto lg:bg-none">
-          <a
-            className="pointer-events-none flex place-items-center gap-2 p-8 lg:pointer-events-auto lg:p-0"
-            href="https://vercel.com?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            By{" "}
-            <Image
-              src="/vercel.svg"
-              alt="Vercel Logo"
-              className="dark:invert"
-              width={100}
-              height={24}
-              priority
-            />
-          </a>
+    <main>
+      <Hero />
+      <Web3 />
+      <Marketing />
+      <Strategy />
+      <Deliver />
+      <div id="blog" className="py-20 padding bg-emerald-50 space-y-12 lg:space-y-16">
+        {details.map((data, key) => (
+          <Comp
+            img={data.img}
+            position={data.position}
+            title={data.title}
+            subtitle={data.subtitle}
+            text={data.text}
+            gradient={data.gradient}
+          />
+        ))}
+        <div className="py-10 center ">
+          <Button text="Book a call" />
         </div>
       </div>
-
-      <div className="relative z-[-1] flex place-items-center before:absolute before:h-[300px] before:w-full before:-translate-x-1/2 before:rounded-full before:bg-gradient-radial before:from-white before:to-transparent before:blur-2xl before:content-[''] after:absolute after:-z-20 after:h-[180px] after:w-full after:translate-x-1/3 after:bg-gradient-conic after:from-sky-200 after:via-blue-200 after:blur-2xl after:content-[''] before:dark:bg-gradient-to-br before:dark:from-transparent before:dark:to-blue-700 before:dark:opacity-10 after:dark:from-sky-900 after:dark:via-[#0141ff] after:dark:opacity-40 sm:before:w-[480px] sm:after:w-[240px] before:lg:h-[360px]">
-        <Image
-          className="relative dark:drop-shadow-[0_0_0.3rem_#ffffff70] dark:invert"
-          src="/next.svg"
-          alt="Next.js Logo"
-          width={180}
-          height={37}
-          priority
-        />
-      </div>
-
-      <div className="mb-32 grid text-center lg:mb-0 lg:w-full lg:max-w-5xl lg:grid-cols-4 lg:text-left">
-        <a
-          href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className="group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-gray-300 hover:bg-gray-100 hover:dark:border-neutral-700 hover:dark:bg-neutral-800/30"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2 className="mb-3 text-2xl font-semibold">
-            Docs{" "}
-            <span className="inline-block transition-transform group-hover:translate-x-1 motion-reduce:transform-none">
-              -&gt;
-            </span>
-          </h2>
-          <p className="m-0 max-w-[30ch] text-sm opacity-50">
-            Find in-depth information about Next.js features and API.
-          </p>
-        </a>
-
-        <a
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          className="group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-gray-300 hover:bg-gray-100 hover:dark:border-neutral-700 hover:dark:bg-neutral-800/30"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2 className="mb-3 text-2xl font-semibold">
-            Learn{" "}
-            <span className="inline-block transition-transform group-hover:translate-x-1 motion-reduce:transform-none">
-              -&gt;
-            </span>
-          </h2>
-          <p className="m-0 max-w-[30ch] text-sm opacity-50">
-            Learn about Next.js in an interactive course with&nbsp;quizzes!
-          </p>
-        </a>
-
-        <a
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className="group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-gray-300 hover:bg-gray-100 hover:dark:border-neutral-700 hover:dark:bg-neutral-800/30"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2 className="mb-3 text-2xl font-semibold">
-            Templates{" "}
-            <span className="inline-block transition-transform group-hover:translate-x-1 motion-reduce:transform-none">
-              -&gt;
-            </span>
-          </h2>
-          <p className="m-0 max-w-[30ch] text-sm opacity-50">
-            Explore starter templates for Next.js.
-          </p>
-        </a>
-
-        <a
-          href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className="group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-gray-300 hover:bg-gray-100 hover:dark:border-neutral-700 hover:dark:bg-neutral-800/30"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2 className="mb-3 text-2xl font-semibold">
-            Deploy{" "}
-            <span className="inline-block transition-transform group-hover:translate-x-1 motion-reduce:transform-none">
-              -&gt;
-            </span>
-          </h2>
-          <p className="m-0 max-w-[30ch] text-balance text-sm opacity-50">
-            Instantly deploy your Next.js site to a shareable URL with Vercel.
-          </p>
-        </a>
-      </div>
+      <Demand />
+      <Speak />
+      <Questions />
+      <Footer />
     </main>
   );
 }

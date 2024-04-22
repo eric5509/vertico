@@ -2,32 +2,95 @@
 @tailwind components;
 @tailwind utilities;
 
-:root {
-  --foreground-rgb: 0, 0, 0;
-  --background-start-rgb: 214, 219, 220;
-  --background-end-rgb: 255, 255, 255;
+body {
+  @apply text-13;
+  /* background-image: linear-gradient(90deg, purple, pink, yellow); */
+  scroll-behavior: smooth;
+  overflow-x: hidden;
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --foreground-rgb: 255, 255, 255;
-    --background-start-rgb: 0, 0, 0;
-    --background-end-rgb: 0, 0, 0;
+
+.cursor{
+  cursor: url('https://image.spreadshirtmedia.com/image-server/v1/products/T1459A839PA3861PT28D1042852706W6528H10000/views/1,width=550,height=550,appearanceId=839,backgroundColor=F2F2F2/mouse-cursor-sticker.jpg');
+}
+
+.navHeight{
+  height: calc(100vh - 80px)
+}
+
+::-webkit-scrollbar{
+  display: none;
+}
+
+
+.vertical-rl{
+  writing-mode: vertical-rl;
+  text-orientation: sideways;
+}
+.vertical-lr{
+  writing-mode: vertical-lr;
+  text-orientation: sideways-right;
+}
+
+.active, #active{
+  color: red
+}
+
+.textGradient {
+  background-image: linear-gradient(90deg, red, blue);
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  -webkit-background-clip: text;
+}
+
+.textGradient2 {
+  background-image: linear-gradient(90deg, blue, red);
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  -webkit-background-clip: text;
+}
+
+.bgGradient {
+  background-image: linear-gradient(90deg, pink, purple);
+}
+
+.container {
+  @apply max-w-[1350px] w-full mx-auto;
+}
+
+.center {
+  @apply flex items-center justify-center;
+}
+
+.padding {
+  @apply px-4 xl:px-0;
+}
+
+.animate {
+  animation: 30s slide infinite linear;
+}
+
+
+
+@keyframes slide {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-100%);
   }
 }
 
-body {
-  color: rgb(var(--foreground-rgb));
-  background: linear-gradient(
-      to bottom,
-      transparent,
-      rgb(var(--background-end-rgb))
-    )
-    rgb(var(--background-start-rgb));
+
+.animate2 {
+  animation: 35s slide2 infinite linear;
 }
 
-@layer utilities {
-  .text-balance {
-    text-wrap: balance;
+@keyframes slide2 {
+  from {
+    transform: translateX(-100%);
+  }
+  to {
+    transform: translateX(0);
   }
 }
