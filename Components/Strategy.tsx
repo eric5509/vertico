@@ -40,7 +40,7 @@ export default function Strategy() {
       className="padding py-16 lg:py-28 font-bold bg-white  text-center"
       id="strategy"
     >
-      <p className="text-xl w-full items-center justify-center gap-2 flex flex-wrap text-center">
+      <p className="text-2xl w-full items-center justify-center gap-2 flex flex-wrap text-center">
         {"Delivering marketing strategy across crypto companies"
           .split(" ")
           .map((data, key) => (
@@ -57,7 +57,7 @@ export default function Strategy() {
           ))}
         
       </p>
-      <div className="flex cursor-grab text-[22px] lg:text-2xl overflow-hidden whitespace-nowrap mt-10 lg:mt-14">
+      <div className="flex cursor-grab text-[22px] lg:text-[27px] overflow-hidden whitespace-nowrap mt-10 lg:mt-14">
         <div className="flex animate items-center">
           {items.map((data, key) => (
             <div className="mx-10">{data}</div>
@@ -69,7 +69,7 @@ export default function Strategy() {
           ))}
         </div>
       </div>
-      <div className="flex cursor-grab text-[22px] lg:text-2xl overflow-hidden whitespace-nowrap mt-9 lg:mt-14">
+      <div className="flex cursor-grab text-[22px] lg:text-[27px] overflow-hidden whitespace-nowrap mt-9 lg:mt-14">
         <div className="flex animate2 items-center">
           {items2.map((data, key) => (
             <div className="mx-10">{data}</div>
