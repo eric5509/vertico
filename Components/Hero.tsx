@@ -1,9 +1,15 @@
 "use client";
 import localFont from "next/font/local";
-import { BsArrowRight } from "react-icons/bs";
 import { motion } from "framer-motion";
 import Button from "./Button";
-import { useEffect, useRef, useState } from "react";
+import Magnet from '@/assets/images/magnet.png'
+import Bag from '@/assets/images/bag.png'
+import Hand from '@/assets/images/hand.png'
+import Arrow from '@/assets/images/arrow.png'
+import Image from "next/image";
+
+
+
 const myFont = localFont({ src: "../assets/fonts/Poppins-Extrabold.ttf" });
 
 export default function Hero() {
@@ -89,7 +95,9 @@ export default function Hero() {
             </p>
           </motion.div>
         </div>
-        <div className=""></div>
+        <div className="">
+          <Image src={Magnet} alt="" height={0} width={0} className="h-32 w-32 object-cover"/>
+        </div>
       </div>
     </div>
   );
